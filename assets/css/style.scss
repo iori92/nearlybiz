@@ -1,0 +1,1053 @@
+// Font Variables
+$font-heading: 'Poppins',
+sans-serif;
+$font-primary: 'Roboto',
+sans-serif;
+// Color Variables
+$primary: #F5382F;
+$secondary: #00A4FB;
+$light: #F4F2F8;
+$dark: #191919;
+// Viewport Variables
+$mobile: 576px;
+$tablet: 770px;
+$laptop: 1025px;
+$desktop: 1200px;
+
+// Setting fonts
+body {
+    font-family: $font-primary;
+}
+
+h1,
+h2,
+h3,
+h4.h5,
+h6 {
+    font-family: $font-heading;
+}
+
+// Removing Button Border on Focus
+a:focus,
+a:active, input:focus,
+input:active {
+    outline: 0 !important;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0) !important;
+    text-decoration: none !important;
+}
+
+// Text Indentation
+.text-indent {
+    text-indent: 30px;
+}
+
+// Base Padding Classes
+.padding-y-50 {
+    padding: 50px 0px;
+}
+
+.padding-y-80 {
+    padding: 80px 0px;
+}
+
+.padding-y-100 {
+    padding: 100px 0px;
+}
+
+.padding-y-120 {
+    padding: 120px 0px;
+}
+
+// Changing Style of selected Text
+::-moz-selection {
+    color: white;
+    background: $primary;
+}
+
+::selection {
+    color: white;
+    background: $primary;
+}
+
+// Styles for Scrollbars
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba($dark, .7);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: $primary;
+}
+
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #fefefe;
+    z-index: 9999;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+        height: 100px;
+    }
+}
+
+// Removing Style of a(links)
+a {
+    color: $dark;
+    transition: all .4s;
+
+    &:hover {
+        color: $primary;
+        text-decoration: none;
+    }
+}
+
+// Scroll Top
+.scroll-top {
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    background-color: $primary;
+    height: 40px;
+    width: 40px;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    z-index: 99999;
+    cursor: pointer;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    opacity: 0;
+    border-radius: 50%;
+
+    i {
+        transition: all .2s;
+    }
+
+    &:hover {
+        i {
+            padding-bottom: 10px;
+        }
+    }
+
+    @media (max-width: $mobile){
+        bottom: 30px;
+        right: 10px;
+    }
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: $primary;
+    border-color: $primary;
+    position: relative;
+    z-index: 1;
+
+    &::before {
+        position: absolute;
+        z-index: -1;
+        content: '';
+        bottom: -10px;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        width: 80%;
+        height: 90%;
+        background-color: $primary;
+        opacity: 0;
+        filter: blur(10px);
+        transition: all .3s ease-out 0s;
+
+        &:hover {
+            opacity: .5;
+        }
+    }
+
+    &:hover,
+    &:active,
+    &:focus {
+        color: #fff;
+        background-color: darken($primary, 5) !important;
+        border-color: darken($primary, 5) !important;
+
+        &::before {
+            opacity: .5;
+        }
+    }
+}
+
+.btn-secondary {
+    color: #fff;
+    background-color: $secondary;
+    border-color: $secondary;
+    position: relative;
+    z-index: 1;
+
+    &::before {
+        position: absolute;
+        z-index: -1;
+        content: '';
+        bottom: -10px;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        width: 80%;
+        height: 90%;
+        background-color: $secondary;
+        opacity: 0;
+        filter: blur(10px);
+        transition: all .3s ease-out 0s;
+
+        &:hover {
+            opacity: .5;
+        }
+    }
+
+    &:hover,
+    &:active,
+    &:focus {
+        color: #fff;
+        background-color: darken($secondary, 5) !important;
+        border-color: darken($secondary, 5) !important;
+
+        &::before {
+            opacity: .5;
+        }
+    }
+}
+
+.btn-light {
+    color: #fff;
+    background-color: $light;
+    border-color: $light;
+    position: relative;
+    z-index: 1;
+
+    &::before {
+        position: absolute;
+        z-index: -1;
+        content: '';
+        bottom: -10px;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        width: 80%;
+        height: 90%;
+        background-color: $light;
+        opacity: 0;
+        filter: blur(10px);
+        transition: all .3s ease-out 0s;
+
+        &:hover {
+            opacity: .5;
+        }
+    }
+
+    &:hover,
+    &:active,
+    &:focus {
+        color: #fff;
+        background-color: darken($light, 5) !important;
+        border-color: darken($light, 5) !important;
+
+        &::before {
+            opacity: .5;
+        }
+    }
+}
+
+.btn-dark {
+    color: #fff;
+    background-color: $dark;
+    border-color: $dark;
+    position: relative;
+    z-index: 1;
+
+    &::before {
+        position: absolute;
+        z-index: -1;
+        content: '';
+        bottom: -10px;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        width: 80%;
+        height: 90%;
+        background-color: $dark;
+        opacity: 0;
+        filter: blur(10px);
+        transition: all .3s ease-out 0s;
+
+        &:hover {
+            opacity: .5;
+        }
+    }
+
+    &:hover,
+    &:active,
+    &:focus {
+        color: #fff;
+        background-color: darken($dark, 5) !important;
+        border-color: darken($dark, 5) !important;
+
+        &::before {
+            opacity: .5;
+        }
+    }
+}
+
+.btn-google {
+    background-color: #ea4335 !important;
+    color: #fff !important;
+    border-color: #ea4335 !important;
+    box-shadow: 0 0.4rem .5rem rgba(0, 0, 0, 0.15) !important;
+
+    &:hover {
+        background-color: darken(#ea4335, 10%) !important;
+        cursor: pointer;
+        box-shadow: none !important;
+    }
+}
+
+.btn-facebook {
+    background-color: #4267B2 !important;
+    color: #fff !important;
+    border-color: #4267B2 !important;
+    box-shadow: 0 0.4rem .5rem rgba(0, 0, 0, 0.15) !important;
+
+    &:hover {
+        background-color: darken(#4267B2, 10%) !important;
+        cursor: pointer;
+        box-shadow: none !important;
+    }
+}
+
+.bg-primary {
+    background-color: $primary !important;
+}
+
+.bg-secondary {
+    background-color: $secondary !important;
+}
+
+.bg-dark {
+    background-color: $dark !important;
+}
+
+.bg-light {
+    background-color: $light !important;
+}
+
+.text-primary {
+    color: $primary !important;
+}
+
+.text-secondary {
+    color: $secondary !important;
+}
+
+.text-dark {
+    color: $dark !important;
+}
+
+.text-light {
+    color: $light !important;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+// Select 2
+
+.select2-dropdown{
+    z-index: 2500!important;
+}
+
+.select2-container--default .select2-selection--single,
+.select2-selection .select2-selection--single {
+    border: 1px solid #d2d6de;
+    border-radius: .25rem;
+    padding: .375rem .75rem;
+}
+
+.select2-container--default .select2-selection--single {
+    background-color: #fff;
+    border: 1px solid #aaa;
+    border-radius: 4px
+}
+
+.select2-container .select2-selection--single {
+    box-sizing: border-box;
+    cursor: pointer;
+    display: block;
+    height: 28px;
+    user-select: none;
+    -webkit-user-select: none
+}
+
+.select2-container .select2-selection--single .select2-selection__rendered {
+    padding-right: 10px
+}
+
+.select2-container .select2-selection--single .select2-selection__rendered {
+    padding-left: 0;
+    padding-right: 0;
+    height: auto;
+    margin-top: -3px
+}
+
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+    color: #444;
+    line-height: 28px
+}
+
+.select2-container--default .select2-selection--single,
+.select2-selection .select2-selection--single {
+    border: 1px solid #ced4da;
+    border-radius: .25rem !important;
+    height: calc(1.5em + .75rem + 2px);
+    padding: .375rem .75rem;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__arrow {
+    height: 26px;
+    position: absolute;
+    top: 6px !important;
+    right: 1px;
+    width: 20px
+}
+
+.select2-container--default .select2-search--dropdown .select2-search__field {
+    display: block;
+    width: 100%;
+    height: calc(1.5em + .75rem + 2px);
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.select2-container--default .select2-results__option[aria-selected=true] {
+    background-color: lighten($primary, 35%);
+    color: $primary;
+}
+
+.select2-container--default .select2-results__option--highlighted[aria-selected] {
+    background-color: $primary!important;
+    color: white!important;
+}
+
+// Business Card
+.biz-card {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #eee;
+    border-radius: 5px;
+    box-shadow: 0 .125rem .25rem rgba(0, 0, 0, .075) !important;
+    margin-bottom: 20px;
+    overflow: hidden;
+    transition: all .3s ease;
+
+    .biz-img-container {
+        position: relative;
+
+        img {
+            width: 100%;
+        }
+
+        .fav {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            height: 30px;
+            width: 30px;
+            font-size: 20px;
+            border-radius: 50%;
+            padding: 2px;
+            background-color: white;
+            text-align: center;
+            cursor: pointer;
+
+            input {
+                visibility: hidden;
+            }
+        }
+
+        .tags {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+
+            span {
+                padding: 5px;
+                color: white;
+                border-radius: 5px;
+            }
+
+            .open {
+                background-color: $secondary;
+            }
+
+            .closed {
+                background-color: $primary;
+            }
+        }
+    }
+
+    .biz-info-container {
+        padding: 15px;
+        background-color: #fff;
+
+        h4 {
+            margin-bottom: 0px;
+            font-size: 1.2rem;
+        }
+
+        p {
+            margin-bottom: 0px;
+            color: #737373;
+            font-size: 14px;
+        }
+    }
+
+    &:hover {
+        box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15) !important;
+    }
+
+}
+
+// Swiper Base CSS
+.swiper-container {
+    width: 100%;
+    height: 100%;
+    padding-bottom: 50px;
+}
+
+.btn-next, .btn-prev{
+    position: absolute;
+    bottom: 20px;
+    height: 30px;
+    width: 30px;
+    z-index: 20;
+    background-color: $dark;
+    color: $light;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: all .3s ease;
+
+    &:hover{
+        background-color: $primary;
+    }
+}
+
+.btn-next{
+    right: 0px;
+}
+
+.btn-prev{
+    right: 40px;
+}
+
+
+// Navbar
+
+.navbar-light .navbar-nav .nav-link {
+    color: lighten($dark, 30%);
+}
+
+.navbar {
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    padding: 0px;
+    top: 0;
+
+    .navbar-brand {
+        padding: 0px;
+        margin: 0px 1rem;
+
+        img {
+            height: 40px;
+        }
+
+        @media (max-width: $tablet) {
+            padding: 10px 0px;
+        }
+    }
+
+    .navbar-toggler {
+        @media (max-width: $tablet) {
+            margin: 10px;
+        }
+    }
+
+    /* shows the dropdown menu on hover */
+    .dropdown:hover .dropdown-menu,
+    .dropdown .dropdown-menu:hover {
+        display: block;
+        visibility: visible;
+        opacity: 1;
+        transition: visibility 0s, opacity 0.3s linear;
+    }
+
+    .dropdown-menu {
+        left: -30px;
+        border-radius: 0px;
+        box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15) !important;
+        border: none;
+
+        @media (max-width: $tablet) {
+            background-color: transparent;
+            box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 0) !important;
+            transition: all .3s ease;
+            margin-top: 0px;
+        }
+    }
+
+    .navbar-collapse {
+        transition: all .4s ease-in-out;
+        margin: 0px 1rem;
+    }
+
+    .navbar-collapse.show {
+        height: 100vh;
+    }
+
+    .nav-item.dropdown {
+        margin: 0px 10px;
+        padding: 10px 0px;
+
+        &:hover {
+            i {
+                color: $primary;
+            }
+        }
+
+        .dropdown-menu {
+            .dropdown-item {
+                &:hover {
+                    background-color: lighten($primary, 35%);
+                    color: $primary;
+                }
+            }
+        }
+    }
+
+    .nav-item:not(.dropdown) {
+        position: relative;
+        margin: 0px 10px;
+        padding: 10px 0px;
+
+        &::before {
+            content: '';
+            position: absolute;
+            height: 0px;
+            width: 100%;
+            background-color: $primary;
+            bottom: 3px;
+            right: 0;
+            transition: all .2s cubic-bezier(0.86, 0, 0.07, 1);
+        }
+
+        &:hover {
+            i {
+                color: $primary;
+            }
+
+            &::before {
+                height: 3px;
+            }
+        }
+    }
+
+    .nav-item.nav-cta {
+        &:hover {
+            i {
+                color: white;
+            }
+
+            &::before {
+                height: 0px;
+            }
+        }
+    }
+
+    .nav-item {
+        @media (max-width: $laptop) {
+            margin: 0px !important;
+        }
+    }
+
+    @media (max-width: $tablet) {
+        .nav-item {
+            padding: 5px;
+            border-bottom: 1px solid #eee;
+            border-top: 1px solid #eee;
+        }
+
+        .btn {
+            display: block;
+        }
+    }
+}
+
+// Search-box
+.search-container {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba($dark, 0.7);
+    position: fixed;
+    top: 0;
+    z-index: 2000;
+    display: none;
+
+    .close-btn {
+        position: absolute;
+        top: 24px;
+        right: 24px;
+        font-size: 20px;
+        color: white;
+        cursor: pointer;
+        background-color: $primary;
+        padding: 1px 8.5px;
+        height: 30px;
+        width: 30px;
+    }
+
+    .search-box {
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100vw;
+
+        .container {
+            width: 100vw;
+
+            .form-row {
+                background-color: white;
+                padding: 20px;
+                border-radius: 5px;
+
+                div {
+                    @media (max-width: $mobile) {
+                        margin-bottom: 15px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Footer
+footer {
+    .upper-footer {
+        background-image: url(../img/footer-bg.png);
+        background-size: cover;
+
+        @media (max-width: $mobile) {
+            background-image: none;
+        }
+
+        .footer-widget-about {
+            img {
+                height: 40px;
+            }
+
+            .social {
+                list-style: none;
+                padding: 0px;
+
+                li {
+                    display: inline-block;
+                    padding: 5px;
+                    margin: 5px;
+                    font-size: 20px;
+                }
+            }
+        }
+    }
+}
+
+// Page CSS
+main {
+    margin-top: 60px;
+}
+
+// BreadCrumb
+.bread-crumb{
+    background: linear-gradient(0deg, rgba($dark, 0.8), rgba($dark, 0.8)), url('../img/map.png');
+    background-size: cover;
+    background-attachment: fixed;
+    color: white;
+
+    a{
+        color: white;
+        font-size: 20px;
+        &:hover{
+            color: $primary;
+        }
+
+        @media (max-width: $mobile)
+        {
+            font-size: 1rem;
+        }
+    }
+
+    h1{
+        font-size: 3rem;
+
+        @media (max-width: $mobile)
+        {
+            font-size: 1.8rem;
+        }
+    }
+}
+
+// Hero Section
+.hero {
+    background: linear-gradient(0deg, rgba($dark, 0.8), rgba($dark, 0.8)), url('../img/hero-bg.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    min-height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    position: relative;
+
+    h1 {
+        font-size: 5rem;
+    }
+
+    h5 {
+        font-size: 1.5rem;
+    }
+
+    .search-box {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .container {
+            width: 100vw;
+
+            .form-row {
+                background-color: white;
+                padding: 20px;
+                border-radius: 5px;
+
+                div {
+                    @media (max-width: $mobile) {
+                        margin-bottom: 15px;
+                    }
+                }
+            }
+        }
+    }
+
+    .buttons {
+        margin-top: 20px;
+
+        a {
+            border-radius: 100px;
+            width: 180px;
+            height: 45px;
+            font-size: 18px;
+        }
+    }
+
+    @media (max-width: $laptop) {
+        h1 {
+            font-size: 4rem;
+        }
+    }
+
+    @media (max-width: $tablet) {
+        h1 {
+            font-size: 3rem;
+        }
+
+        h5 {
+            font-size: 1rem;
+        }
+    }
+
+    @media (max-width: $mobile) {
+        h1 {
+            font-size: 2.1rem;
+        }
+    }
+}
+
+// Home Categories Section
+.categories-home {
+    .category {
+        margin: 10px 8px;
+        padding: 5px 15px;
+        background-color: lighten($primary, 10%);
+        border-radius: 500px;
+        color: #fff;
+        box-shadow: 0px 2px rgba($primary, 0.4),
+            0px 4px rgba($primary, 0.2),
+            0px 6px rgba($primary, 0.05);
+
+        &:hover {
+            background-color: $primary;
+            box-shadow: 0px 4px rgba($primary, 0.4),
+                0px 6px rgba($primary, 0.2),
+                0px 12px rgba($primary, 0.05);
+        }
+    }
+}
+
+// CTA
+.cta{
+    background-image: linear-gradient(0deg, rgba($dark, 0.7), rgba($dark, 0.7)), url(../img/map.png);
+    background-attachment: fixed;
+    background-size: contain;
+    color: #fff;
+    
+    h3{
+        text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.3);
+        font-size: 2.5rem;
+    }
+
+    h4{
+        font-size: 1.8rem;
+    }
+
+    @media (max-width: $tablet){
+        h3{
+            font-size: 2rem;
+        }
+    
+        h4{
+            font-size: 1.5rem;
+        }
+    }
+
+    @media (max-width: $mobile){
+        h3{
+            font-size: 1.7rem;
+        }
+    
+        h4{
+            font-size: 1.2rem;
+        }
+    }
+}
+
+// Authentication Pages
+.auth{
+    background: linear-gradient(0deg, rgba($dark, 0.9), rgba($dark, 0.9)), url('../img/hero-bg.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    min-height: 95vh;
+
+    .auth-container {
+        transition: all 4s;
+        .card-body {
+
+            h3{
+                font-size: 1.75rem;
+                @media (max-width: $mobile){
+                    font-size: 1.2rem;
+                    
+                }
+            }
+        }
+    
+        .nav-pills .nav-link.active,
+        .nav-pills .show>.nav-link {
+            border-radius: 0px;
+            background-color: transparent;
+            color: $primary;
+            border-bottom: 5px solid $primary;
+            transition: all .4s;
+        }
+    
+        .nav-pills .nav-link {
+            color: $dark;
+            border-radius: 0px;
+            transition: all .8s;
+            border-bottom: 5px solid transparent;
+    
+            &:hover {
+                color: $primary;
+            }
+        }
+    }
+}
+
+// Add Business
+.add-business{
+    .image-container{
+        position: relative;
+        img{
+            width: 100%;
+        }
+
+        .content{
+            position: absolute;
+            background-color: rgba($dark, 0.8);
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: all .3s ease;
+
+            p{
+                color: white;
+                font-size: 1.5rem;
+            }
+        }
+
+        &:hover{
+            .content{
+                opacity: 1;
+            }
+        }
+
+        .actionUpload{
+            position: relative;
+            input{
+                position: absolute;
+                top: 0;
+                left: 0;
+                opacity: 0;
+            }
+        }
+    }
+}
